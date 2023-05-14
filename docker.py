@@ -98,6 +98,14 @@ ls /home/master
 vi /etc/sudoers
 %sudo   (ALL:ALL) NOPASSWD: ALL
 node2
+node2 
+for 2nd job
+cd /var/lib/jenkins/wrokspace/
+/first project
+vi Dockerfile
+FROM ngnix
+copy . /usr/share/nginx/html/
+for 3rd job
 su -s /bin/bash jenkins
 ssh-keygen ->enter->enter
 ssh-copy-id master@192.168.20.163
