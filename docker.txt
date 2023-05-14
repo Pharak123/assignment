@@ -1,0 +1,105 @@
+to create network
+docker network ls
+   36  docker network create queen
+   37  docker network ls
+
+to creat customised page usign nginx
+vim index.html
+   46  vim Dockerfile
+       FROM nginx
+       COPY ./*.html /usr/share/nginx/html/
+   47  docker build -t myweb1
+   48* 
+   49  vim Dockerfile
+   50  docker build -t myweb1
+   51  docker build -t myweb1 .
+   52  ls
+   53  vim Dockerfile
+   54  docker build -t myweb1 .
+   55  docker images
+   56  docker run -ti --name myname -p 9050:80 -d myname1
+   57  docker run -ti --name myname -p 9050:80 -d myweb1
+   58  docker ps -a
+
+to create page using httpd
+vi index.html
+   73  vi Dockerfile
+   74  rm -rf Dockerfile
+   75  vi Dockerfile
+   76  cat Dockerfile
+   77  docker build -t httpd1 .
+   78  docker images
+   79  docker run -ti --name P1 -p 9090:80 -d httpd1
+   80  history
+root@aboli-VirtualBox:~/web1# cat Dockerfile
+FROM httpd
+COPY . /usr/local/apache2/htdocs/
+
+to push file on docker hub
+docker login
+  110  docker build -t httpd .
+  111  docker push abolipharak/python:1.0
+  112  docker images
+  117  docker tag myweb1 abolipharak/python:1.0
+  118  docker images
+  119  docker push abolipharak/python:1.0
+
+to run python code
+mkdir puthon
+cd python
+ vi my.py
+a = int(input("Enter the first number"))
+b = int(input("Enter the second number"))
+a,b=b,a
+print("a: ",a,"b: ",b)
+
+vi  Dockerfile
+FROM python:3
+RUN mkdir test
+copy my.py /test/
+CMD [ "python","/test/my.py" ]
+
+docker build -t myimage .
+docker run --name container -ti myimage
+
+
+Docker deployment
+cat my.py
+  130  cat Dockerfile
+  133  docker mag
+  135  docker build -t queen .
+  136  docker images
+  141  docker run --name o1 -ti queen
+  146  docker images
+  147  docker run --name k1 -ti queen
+  149  docker exec g1 king /bin/bash
+       docker exec -ti g1 python3/containerfolrder/my.py
+       docker load < king.tar
+       docker save king > king.tar
+       docker ps
+       docker images
+       docker rmi -f king
+       docker load < king.tar
+       docker tag king abolipharak/king
+       docker push abolipharak/king
+       docker tag king abolipharak/king:1.2
+       docker push abolipharak/king:1.2
+
+
+node3 (master)for job3 
+install ssh
+systemctl status ssh
+ss -ant
+apt install docker.io
+systemctl start docker
+systemctl enable docker
+ls /home/master
+vi /etc/sudoers
+%sudo   (ALL:ALL) NOPASSWD: ALL
+node2 
+su -s /bin/bash jenkins
+ssh-keygen ->enter->enter
+ssh-copy-id master@192.168.20.163
+ssh master@ip
+
+
