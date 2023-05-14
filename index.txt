@@ -1,0 +1,63 @@
+apache 2/httpd
+
+ubuntu machine = install apache2
+amazon machine = yum install httpd
+ubuntu
+apt update -y
+apt upgrade -y
+apt install apache2 -y
+systemctl start apache2
+cd /var/www/html
+vi index.html
+systemctl restart apache 2
+
+amazon
+yum update -y
+yum install httpd -y
+systemctl start httpd
+cd /var/www/html
+vi index.html
+systemctl restart httpd
+
+windows
+server manager-> add role->next next ->web server iis
+ownweb- tools-iis manager
+cdrive-inetpub-wwwroot-web1-file-site.html
+iis manager- add site-page- change port number 8000
+
+for ubuntu machines
+vpc-S/N 2  instance- public ip -enable
+atache vpc to instance
+load balancer  
+ec1 = apt update -y
+    2  apt upgrade -y
+    3  apt install apche2
+    4  apt install apache2
+    5  cd /var/www/html/
+    6  ls
+    7  rm -rf index.html
+    8  vi index.html
+    9  systemctl status apache2
+   10  systemctl restart apache2
+   11  cd /var/www/html
+   12  mkdir web1
+   13  mkdir web3
+   14  cd web3
+   15  vi index.html
+   16  history
+ec2= apt upate -y
+    2  apt update -y
+    3  apt install apache2
+    4  cd /var/www/html/
+    5  mkdir web1
+    6  mkdir web2
+    7  rm web1
+    8  rm -rf web1
+    9  ls
+   10  cd web2
+   11  vim index.html
+   12  history
+
+target grp TG1-/web1/index.html  TG2-/web1/index.html 
+loadbalancer-name-vpc-security grp default- select target grp-create,copy DNS/web1 once page not working then go to LB-lisner-selct rul-manage rule
+/web2* 
